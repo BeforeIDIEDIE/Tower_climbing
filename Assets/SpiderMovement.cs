@@ -6,10 +6,8 @@ public class SpiderMovement : MonoBehaviour
 {
     public float detectionRange = 2f;
     public float jumpForce = 3f;
-    public float preparationTime = 0.2f;
     private bool isAttached = true;
     private Rigidbody rb;
-    private Vector3 initialPosition;
     public Transform[] leftLegs;
     public Transform[] rightLegs;
 
@@ -17,7 +15,6 @@ public class SpiderMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         rb.useGravity = false;
-        initialPosition = transform.position;
     }
 
     void Update()
@@ -26,61 +23,32 @@ public class SpiderMovement : MonoBehaviour
         {
             CheckPlayerBelow();
         }
-        else if (transform.position.y >= initialPosition.y)
+        else
         {
-            ResetPosition();
+            StartCoroutine(Jump());
         }
     }
 
     void CheckPlayerBelow()
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, Vector3.down, out hit, detectionRange))
+        Vector3 rayOrigin = transform.position; 
+
+        if (Physics.Raycast(rayOrigin, Vector3.down, out hit, detectionRange))
         {
             if (hit.collider.CompareTag("Player"))
             {
-                StartCoroutine(DetachAndJump());
+                Debug.Log("ÀÎ½Ä!");
+                isAttached = false;
+                rb.useGravity = true;
             }
         }
+        Debug.DrawLine(rayOrigin, rayOrigin + Vector3.down * detectionRange, Color.red, 0.1f);
     }
 
-    IEnumerator DetachAndJump()
+    IEnumerator Jump()
     {
-        isAttached = false;
-        rb.useGravity = true; 
-
-        yield return new WaitUntil(() => Physics.Raycast(transform.position, Vector3.down, 0.1f));
-
-        while (true)
-        {
-            SetLegAngles(leftLegs, 0f);
-            SetLegAngles(rightLegs, 75f);
-            yield return new WaitForSeconds(preparationTime);
-
-            SetLegAngles(leftLegs, 90f);
-            SetLegAngles(rightLegs, 90f);
-            rb.velocity = Vector3.zero; 
-            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-
-            yield return new WaitUntil(() => rb.velocity.y <= 0);
-            yield return new WaitUntil(() => Physics.Raycast(transform.position, Vector3.down, 0.1f));
-        }
-    }
-
-    void SetLegAngles(Transform[] legs, float angle)
-    {
-        foreach (Transform leg in legs)
-        {
-            leg.localRotation = Quaternion.Euler(-60, angle, -90);
-        }
-    }
-
-    void ResetPosition()
-    {
-        StopAllCoroutines();
-        rb.velocity = Vector3.zero;
-        rb.useGravity = false;
-        transform.position = initialPosition;
-        isAttached = true;
+        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        yield return new WaitForSeconds(2f);
     }
 }

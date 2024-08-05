@@ -365,6 +365,7 @@
 "Assets/PlatformMover.cs"
 "Assets/PlayerMovement.cs"
 "Assets/SpiderMovement.cs"
+"Assets/SpiderPrototype.cs"
 -langversion:9.0
 /deterministic
 /optimize+
