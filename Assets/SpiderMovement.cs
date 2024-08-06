@@ -4,51 +4,67 @@ using UnityEngine;
 
 public class SpiderMovement : MonoBehaviour
 {
-    public float detectionRange = 2f;
-    public float jumpForce = 3f;
-    private bool isAttached = true;
+    public float jumpForce = 1.5f;
+    public float jumpDelay = 3f;
+    public GameObject detector;
+    private bool isTriggered = false;
+    private bool isGrounded = false;
     private Rigidbody rb;
-    public Transform[] leftLegs;
-    public Transform[] rightLegs;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.useGravity = false;
+        rb.isKinematic = true;
     }
 
-    void Update()
+    public void TriggerMovement()
     {
-        if (isAttached)
+        if (!isTriggered)
         {
-            CheckPlayerBelow();
-        }
-        else
-        {
-            StartCoroutine(Jump());
+            Debug.Log("플레이어가 감지되었습니다!");
+            isTriggered = true;
+            rb.useGravity = true;
+            rb.isKinematic = false;
+            StartCoroutine(JumpRoutine());
         }
     }
 
-    void CheckPlayerBelow()
+    IEnumerator JumpRoutine()
     {
-        RaycastHit hit;
-        Vector3 rayOrigin = transform.position; 
-
-        if (Physics.Raycast(rayOrigin, Vector3.down, out hit, detectionRange))
+        while (true)
         {
-            if (hit.collider.CompareTag("Player"))
-            {
-                Debug.Log("인식!");
-                isAttached = false;
-                rb.useGravity = true;
-            }
+            yield return new WaitUntil(() => isGrounded);
+            yield return new WaitForSeconds(jumpDelay);
+            Jump();
+            yield return new WaitUntil(() => !isGrounded);
+            yield return new WaitUntil(() => isGrounded);
         }
-        Debug.DrawLine(rayOrigin, rayOrigin + Vector3.down * detectionRange, Color.red, 0.1f);
     }
 
-    IEnumerator Jump()
+    void Jump()
     {
-        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-        yield return new WaitForSeconds(2f);
+        if (isGrounded)
+        {
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            Debug.Log("좜프");
+        }
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = true;
+            Debug.Log("땅");
+        }
+    }
+
+    void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = false;
+        }
     }
 }

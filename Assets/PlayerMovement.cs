@@ -96,10 +96,9 @@ public class PlayerMovement : MonoBehaviour
         Transform CamTransform = playerCamera.transform;
         RaycastHit Onhit;
 
-        if (Physics.Raycast(CamTransform.position, CamTransform.forward, out Onhit, Mathf.Infinity))
-        {
-            Debug.Log("Name : " + Onhit.transform.gameObject.name);
-        }
+        //if (Physics.Raycast(CamTransform.position, CamTransform.forward, out Onhit, Mathf.Infinity))
+        //{
+        //}
 
     }
 }
