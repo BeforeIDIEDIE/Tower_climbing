@@ -94,11 +94,5 @@ public class PlayerMovement : MonoBehaviour
     void AimCheck()
     {
         Transform CamTransform = playerCamera.transform;
-        RaycastHit Onhit;
-
-        //if (Physics.Raycast(CamTransform.position, CamTransform.forward, out Onhit, Mathf.Infinity))
-        //{
-        //}
-
     }
 }
