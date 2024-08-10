@@ -6,7 +6,7 @@ public class FrogManage : MonoBehaviour
 {
     public float jumpForce = 10f;
     public float jumpInterval = 2f;
-    public float jumpAngle = 45f; // 점프 각도
+    public float jumpAngle = 45f;
     private Rigidbody rb;
     private float nextJumpTime;
     private Vector3 jumpVelocity;
@@ -32,7 +32,6 @@ public class FrogManage : MonoBehaviour
         float vx = jumpForce * transform.forward.x * Mathf.Cos(angle);
         float vz = jumpForce * transform.forward.z * Mathf.Cos(angle);
         float vy = jumpForce * Mathf.Sin(angle);
-        // 속도 벡터 생성
         jumpVelocity = new Vector3(vx, vy, vz);
         rb.AddForce(jumpVelocity, ForceMode.Impulse);
     }
@@ -41,9 +40,14 @@ public class FrogManage : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Wall"))
         {
-            Vector3 reflectedVelocity = Vector3.Reflect(rb.velocity, collision.contacts[0].normal);//충돌지점에서 법선벡터를 이용해 반사각을 구함-> 반사벡터
-            transform.Rotate(transform.behind());
-            rb.velocity = reflectedVelocity;
+            Vector3 collisionNormal = collision.contacts[0].normal;
+            float dotProduct = Vector3.Dot(transform.forward, collisionNormal);//내적이용!
+
+            if (dotProduct < 0)//내적이 음수일때 전방충돌로 간주
+            {
+                transform.Rotate(0, 180, 0);
+                Debug.Log("Front collision detected. Rotating 180 degrees.");
+            }
         }
     }
 }
