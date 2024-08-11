@@ -61,13 +61,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Script\TurretManager.cs" />
+    <Compile Include="Assets\Script\FrogManage.cs" />
     <Compile Include="Assets\Script\BatManager.cs" />
+    <Compile Include="Assets\Script\EnemyHealth.cs" />
     <Compile Include="Assets\Script\SpiderMovement.cs" />
     <Compile Include="Assets\GhostCharacter_Free\Scripts\GhostScript.cs" />
+    <Compile Include="Assets\Script\GhostManage.cs" />
     <Compile Include="Assets\Script\PlatformMover.cs" />
     <Compile Include="Assets\Script\PlayerDetector.cs" />
-    <Compile Include="Assets\FrogManage.cs" />
-    <Compile Include="Assets\GhostManage.cs" />
     <Compile Include="Assets\Script\PlayerMovement.cs" />
   </ItemGroup>
   <ItemGroup>
