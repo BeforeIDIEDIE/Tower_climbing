@@ -12,6 +12,7 @@
         public float fireRange = 15f; //레이캐스트 거리
         public float fireInterval = 5f; //발사 간격
         public string playerTag = "Player";
+        public float FireForce = 20f;
         public GameObject bullet;
 
         private Transform player;
@@ -68,7 +69,12 @@
 
         void Fire()
         {
-            //GameObject bullet = Instantiate(bullet, firePos.position, firePos.rotation);
+            GameObject newbullet = Instantiate(bullet, firePos.position, firePos.rotation);
+            Rigidbody rb = newbullet.GetComponent<Rigidbody>();
+            if (rb != null)
+            {
+                rb.AddForce(firePos.forward * FireForce, ForceMode.Impulse); 
+            }
             Debug.Log("Fire!"); 
         }
 
