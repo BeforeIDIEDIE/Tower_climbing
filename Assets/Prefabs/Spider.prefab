@@ -221,7 +221,7 @@ GameObject:
   - component: {fileID: 6445583650743515964}
   m_Layer: 0
   m_Name: Leg
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -469,7 +469,7 @@ GameObject:
   - component: {fileID: 8116410880743446665}
   m_Layer: 0
   m_Name: Leg (5)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -612,7 +612,7 @@ GameObject:
   - component: {fileID: 4720941624036427230}
   m_Layer: 0
   m_Name: Spider
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1155,7 +1155,7 @@ GameObject:
   - component: {fileID: 2750904031365284752}
   m_Layer: 0
   m_Name: Leg (6)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1191,7 +1191,7 @@ GameObject:
   - component: {fileID: 3708017313915205266}
   m_Layer: 0
   m_Name: head
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1401,7 +1401,7 @@ GameObject:
   - component: {fileID: 8235426551176126002}
   m_Layer: 0
   m_Name: Leg (4)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1434,7 +1434,7 @@ GameObject:
   - component: {fileID: 1777906969029634907}
   m_Layer: 0
   m_Name: Leg (1)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2214,7 +2214,7 @@ GameObject:
   - component: {fileID: 7033548103335469178}
   m_Layer: 0
   m_Name: Leg (3)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2459,7 +2459,7 @@ GameObject:
   - component: {fileID: 1817770012804315733}
   m_Layer: 0
   m_Name: Leg (2)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2705,6 +2705,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: eye2
       objectReference: {fileID: 0}
+    - target: {fileID: 2928843009840278696, guid: 5a0a5ef559aa68c4abff55a09eb81115, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 6407574693921268457, guid: 5a0a5ef559aa68c4abff55a09eb81115, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.2
@@ -2778,6 +2782,10 @@ PrefabInstance:
     - target: {fileID: 2928843009840278696, guid: 5a0a5ef559aa68c4abff55a09eb81115, type: 3}
       propertyPath: m_Name
       value: eye2 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928843009840278696, guid: 5a0a5ef559aa68c4abff55a09eb81115, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 6407574693921268457, guid: 5a0a5ef559aa68c4abff55a09eb81115, type: 3}
       propertyPath: m_LocalScale.x
@@ -2853,6 +2861,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: eye2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2928843009840278696, guid: 5a0a5ef559aa68c4abff55a09eb81115, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 6407574693921268457, guid: 5a0a5ef559aa68c4abff55a09eb81115, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.2
@@ -2926,6 +2938,10 @@ PrefabInstance:
     - target: {fileID: 2928843009840278696, guid: 5a0a5ef559aa68c4abff55a09eb81115, type: 3}
       propertyPath: m_Name
       value: eye2 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928843009840278696, guid: 5a0a5ef559aa68c4abff55a09eb81115, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 6407574693921268457, guid: 5a0a5ef559aa68c4abff55a09eb81115, type: 3}
       propertyPath: m_LocalScale.x

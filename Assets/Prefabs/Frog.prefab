@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1688998663953548150}
   m_Layer: 0
   m_Name: LegRight
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 7329125590176338293}
   m_Layer: 0
   m_Name: body
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -224,7 +224,7 @@ GameObject:
   - component: {fileID: 7999593039621391405}
   m_Layer: 0
   m_Name: eyebrow2
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -330,7 +330,7 @@ GameObject:
   - component: {fileID: 8740989502301951357}
   m_Layer: 0
   m_Name: LegLeft (1)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -435,7 +435,7 @@ GameObject:
   - component: {fileID: 4629117129750293126}
   m_Layer: 0
   m_Name: eyebrow1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -541,7 +541,7 @@ GameObject:
   - component: {fileID: 4613387812950549803}
   m_Layer: 0
   m_Name: LegLeft
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -643,7 +643,7 @@ GameObject:
   - component: {fileID: 880507121672833570}
   m_Layer: 0
   m_Name: Frog
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -686,7 +686,7 @@ GameObject:
   - component: {fileID: 511700945982634214}
   m_Layer: 0
   m_Name: body (1)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -791,7 +791,7 @@ GameObject:
   - component: {fileID: 2836346365641266603}
   m_Layer: 0
   m_Name: LegRight (1)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -896,7 +896,7 @@ GameObject:
   - component: {fileID: 4797409716467497119}
   m_Layer: 0
   m_Name: LegRight (2)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -999,6 +999,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: eye2
       objectReference: {fileID: 0}
+    - target: {fileID: 2928843009840278696, guid: 5a0a5ef559aa68c4abff55a09eb81115, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 6407574693921268457, guid: 5a0a5ef559aa68c4abff55a09eb81115, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.7
@@ -1072,6 +1076,10 @@ PrefabInstance:
     - target: {fileID: 2928843009840278696, guid: 5a0a5ef559aa68c4abff55a09eb81115, type: 3}
       propertyPath: m_Name
       value: eye2 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928843009840278696, guid: 5a0a5ef559aa68c4abff55a09eb81115, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 6407574693921268457, guid: 5a0a5ef559aa68c4abff55a09eb81115, type: 3}
       propertyPath: m_LocalScale.x
