@@ -8,6 +8,8 @@ TagManager:
   - Wall
   - EnemyBall
   - Enemy
+  - Spike
+  - SpikeBall
   layers:
   - Default
   - TransparentFX

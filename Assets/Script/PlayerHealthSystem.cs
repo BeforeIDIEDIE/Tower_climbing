@@ -9,8 +9,9 @@ public class PlayerHealthSystem : MonoBehaviour
     [SerializeField] private int currentHealth;
     private Rigidbody rb;
     private bool canTakeDamage = true;
+    private bool SpikeImmune = false;
     private float invincibleTime = 2f;
-
+    
     // 하트 이미지를 위한 필드 추가
     [SerializeField] private Image[] healthImages;
     [SerializeField] private Sprite fullHeart;
@@ -42,7 +43,13 @@ public class PlayerHealthSystem : MonoBehaviour
                     StartCoroutine(DamageCooldown());
                     break;
                 }
-                else if (collider.CompareTag("Enemy"))
+                else if (collider.CompareTag("Enemy")|| collider.CompareTag("SpikeBall"))
+                {
+                    TakeDamage(1);
+                    StartCoroutine(DamageCooldown());
+                    break;
+                }
+                else if (collider.CompareTag("Spike")&&!SpikeImmune)
                 {
                     TakeDamage(1);
                     StartCoroutine(DamageCooldown());
@@ -85,7 +92,15 @@ public class PlayerHealthSystem : MonoBehaviour
         currentHealth += amount;
         UpdateHealthUI();
     }
+    public void InvincibleTimeUp()
+    {
+        invincibleTime++;
+    }
 
+    public void SpikeImmuneOn()
+    {
+        SpikeImmune = true;
+    }
     private void Die()
     {
         Debug.Log("플레이어가 사망했습니다.");

@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    
-
     //1인칭 카메라!
     public float lookSpeed = 2f;
     public float lookXLimit = 80f;
@@ -18,8 +16,22 @@ public class PlayerMovement : MonoBehaviour
     //이동 관련
     private bool isGrounded = true; 
     public float jumpForce = 5f;
-    public float moveSpeed = 5f;
+    private float moveSpeed = 5f;
 
+    public float getMoveSpeed => moveSpeed;
+    public float getBulletSpeed => bulletSpeed;
+    public void setMoveSpeed(float gob)
+    {
+        moveSpeed *= gob; 
+    }
+    public void setBulletSpeed(float gob)
+    {
+        bulletSpeed *= gob;
+    }
+    public void setNextFireTime(float gob)
+    {
+        nextFireTime *= gob;
+    }
     //총알 관련
     public GameObject bulletPrefab;
     public float bulletSpeed = 20f;
