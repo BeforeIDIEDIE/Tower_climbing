@@ -77,18 +77,36 @@ public class PlayerMovement : MonoBehaviour
     void FireBullet()
     {
         nextFireTime = Time.time + fireRate;
-
-        GameObject bullet = Instantiate(bulletPrefab, playerCamera.transform.position + playerCamera.transform.forward, Quaternion.identity);
-
-
-        Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
-        if (bulletRb != null)
+        
+        Vector3 firePos = playerCamera.transform.position + playerCamera.transform.forward;
+        
+        GameObject bullet = Instantiate(bulletPrefab, firePos, Quaternion.identity);
+        
+        Bullet bulletScript = bullet.GetComponent<Bullet>();
+        
+        if (bulletScript != null)
         {
-            bulletRb.velocity = playerCamera.transform.forward * bulletSpeed;
+            bulletScript.Initialize(playerCamera.transform.forward);
+            bulletScript.speed = bulletSpeed;
         }
 
         Destroy(bullet, 3f);
     }
+    //void FireBullet()
+    //{
+    //    nextFireTime = Time.time + fireRate;
+
+    //    GameObject bullet = Instantiate(bulletPrefab, playerCamera.transform.position + playerCamera.transform.forward, Quaternion.identity);
+
+
+    //    Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
+    //    if (bulletRb != null)
+    //    {
+    //        bulletRb.velocity = playerCamera.transform.forward * bulletSpeed;
+    //    }
+
+    //    Destroy(bullet, 3f);
+    //}
 
     void Jump()
     {

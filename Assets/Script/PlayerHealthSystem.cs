@@ -12,7 +12,7 @@ public class PlayerHealthSystem : MonoBehaviour
     private bool SpikeImmune = false;
     private float invincibleTime = 2f;
     
-    // 하트 이미지를 위한 필드 추가
+    // 하트 이미지
     [SerializeField] private Image[] healthImages;
     [SerializeField] private Sprite fullHeart;
     [SerializeField] private Sprite emptyHeart;

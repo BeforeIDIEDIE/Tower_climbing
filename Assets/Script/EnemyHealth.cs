@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    [SerializeField] private int maxHealth = 10;
+    [SerializeField] private int maxHealth = 2;
     private int currentHealth;
 
     private void Start()
@@ -12,10 +12,10 @@ public class EnemyHealth : MonoBehaviour
         currentHealth = maxHealth;
     }
 
-    public void TakeDamage(int damage)//만약 총알이랑 부딪힐 시 함수 실행
+    public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-
+        Debug.Log("피해1");
         if (currentHealth <= 0)
         {
             Die();
@@ -24,7 +24,6 @@ public class EnemyHealth : MonoBehaviour
 
     private void Die()
     {
-        //파티클 효과, 파괴될때 소리 넣을 예정
         Destroy(gameObject);
     }
 }
