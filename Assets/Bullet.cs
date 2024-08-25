@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float damage = 1f;
+    public int damage = 1;
     public float speed = 2f;
     private Vector3 fireDirection;
+    private bool hasCollided = false;
 
     public void Initialize(Vector3 direction)
     {
@@ -19,16 +20,23 @@ public class Bullet : MonoBehaviour
         transform.forward = fireDirection;
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnCollisionEnter(Collision collision)
     {
-        if (other.CompareTag("Enemy"))
+        if (hasCollided)
         {
-            EnemyHealth enemyHealth = other.GetComponent<EnemyHealth>();
+            return;
+        }
+
+        Debug.Log(collision.gameObject.name);
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            hasCollided = true;
+            EnemyHealth enemyHealth = collision.gameObject.GetComponent<EnemyHealth>();
             if (enemyHealth != null)
             {
-                enemyHealth.TakeDamage(Mathf.RoundToInt(damage));
+                enemyHealth.TakeDamage(damage);
             }
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
     }
 }
