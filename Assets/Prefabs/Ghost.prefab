@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2865998312200301818}
   - component: {fileID: 3090980646924821260}
   - component: {fileID: 2075257900255450575}
-  - component: {fileID: 3034836249526183665}
   m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Enemy
@@ -84,27 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3034836249526183665
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 798155329087210470}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1091978816531404547
 GameObject:
   m_ObjectHideFlags: 0
@@ -116,7 +94,6 @@ GameObject:
   - component: {fileID: 8429892145695662516}
   - component: {fileID: 288102057270945592}
   - component: {fileID: 9056644147011887582}
-  - component: {fileID: 7537290463602157554}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Enemy
@@ -189,27 +166,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7537290463602157554
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1091978816531404547}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2750095332636759749
 GameObject:
   m_ObjectHideFlags: 0
@@ -221,7 +177,6 @@ GameObject:
   - component: {fileID: 3253062104262333124}
   - component: {fileID: 6944654122184907990}
   - component: {fileID: 4358606728671253891}
-  - component: {fileID: 8133519301114207312}
   m_Layer: 0
   m_Name: Cube (3)
   m_TagString: Enemy
@@ -294,27 +249,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &8133519301114207312
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2750095332636759749}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6275868667564209632
 GameObject:
   m_ObjectHideFlags: 0
@@ -326,7 +260,6 @@ GameObject:
   - component: {fileID: 3116204604051829304}
   - component: {fileID: 2456119579677771305}
   - component: {fileID: 8984069702031003028}
-  - component: {fileID: 6335822936694717374}
   m_Layer: 0
   m_Name: Cube (4)
   m_TagString: Enemy
@@ -399,27 +332,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6335822936694717374
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6275868667564209632}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8896216279193008310
 GameObject:
   m_ObjectHideFlags: 0
@@ -431,8 +343,8 @@ GameObject:
   - component: {fileID: 6349725923984441875}
   - component: {fileID: 4512997845374591435}
   - component: {fileID: 830774495808955513}
-  - component: {fileID: 2462450123504842080}
   - component: {fileID: 8812877967955117286}
+  - component: {fileID: 606560684571224392}
   m_Layer: 0
   m_Name: Ghost
   m_TagString: Enemy
@@ -449,7 +361,7 @@ Transform:
   m_GameObject: {fileID: 8896216279193008310}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.26, y: 1.272, z: -28.342}
+  m_LocalPosition: {x: -14.26, y: 1.403, z: -28.342}
   m_LocalScale: {x: 0.4, y: 0.7, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -511,7 +423,25 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &2462450123504842080
+--- !u!114 &8812877967955117286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8896216279193008310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74163ad6f2379314baaa2f515fe4d5cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectionRadius: 10
+  rotationSpeed: 2
+  moveSpeed: 1
+  playerTag: Player
+  originalMaterial: {fileID: 2100000, guid: 97e3aa5798761e943a0102b435a5eb8f, type: 2}
+  transparentMaterial: {fileID: 2100000, guid: 920e8a1abacdfab4d8ffb87f32a70066, type: 2}
+--- !u!65 &606560684571224392
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -530,24 +460,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 1, z: 1.7}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8812877967955117286
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8896216279193008310}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74163ad6f2379314baaa2f515fe4d5cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  detectionRadius: 10
-  rotationSpeed: 2
-  moveSpeed: 1
-  playerTag: Player
 --- !u!1001 &1489066756527982113
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -616,7 +530,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6707802645896503777, guid: 67a0a64017fd263489f537ae59f72970, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -694,7 +609,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6707802645896503777, guid: 67a0a64017fd263489f537ae59f72970, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

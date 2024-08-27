@@ -58,9 +58,11 @@
                 RaycastHit hit;
                 if (Physics.Raycast(firePos.position, firePos.forward, out hit, fireRange))
                 {
+                    
                     if (hit.collider.CompareTag(playerTag))
                     {
-                        Fire();
+                    Debug.Log("hit");
+                    Fire();
                         lastFireTime = Time.time;
                     }
                 }

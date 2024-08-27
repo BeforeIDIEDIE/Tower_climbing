@@ -38,8 +38,7 @@
               "RelativeToolTip": "Assets\\Bullet.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-23T17:22:47.943Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-23T17:22:47.943Z"
             },
             {
               "$type": "Document",
@@ -51,8 +50,7 @@
               "RelativeToolTip": "Assets\\Script\\EnemyHealth.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-23T17:13:21.744Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-23T17:13:21.744Z"
             },
             {
               "$type": "Document",
@@ -64,8 +62,7 @@
               "RelativeToolTip": "Assets\\Script\\PlayerMovement.cs",
               "ViewState": "AgIAACkAAAAAAAAAAAAAADYAAABPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-23T16:32:40.52Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-23T16:32:40.52Z"
             },
             {
               "$type": "Document",
@@ -77,8 +74,7 @@
               "RelativeToolTip": "Assets\\Script\\PlayerHealthSystem.cs",
               "ViewState": "AgIAABUAAAAAAAAAAAAAAC0AAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-23T16:30:09.366Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-23T16:30:09.366Z"
             }
           ]
         }

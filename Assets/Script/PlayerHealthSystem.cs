@@ -86,10 +86,13 @@ public class PlayerHealthSystem : MonoBehaviour
         UpdateHealthUI();
     }
 
-    public void IncreaseMaxHealth(int amount)
+    public void IncreaseMaxHealth()
     {
-        maxHealth += amount;
-        currentHealth += amount;
+        maxHealth += 1;
+        if (maxHealth <= healthImages.Length)
+        {
+            healthImages[maxHealth - 1].gameObject.SetActive(true);
+        }
         UpdateHealthUI();
     }
     public void InvincibleTimeUp()
@@ -112,7 +115,7 @@ public class PlayerHealthSystem : MonoBehaviour
 
     private void UpdateHealthUI()
     {
-        for (int i = 0; i < healthImages.Length; i++)
+        for (int i = 0; i < maxHealth; i++)
         {
             if (i < currentHealth)
             {

@@ -8,32 +8,44 @@ public class GhostManage : MonoBehaviour
     public float rotationSpeed = 2f;
     public float moveSpeed = 3f;
     public string playerTag = "Player";
+    public Material originalMaterial;
+    public Material transparentMaterial;
     private Transform player;
     private bool isChasing = false;
     private List<Renderer> childRenderers = new List<Renderer>();
-    private List<Color> originalColors = new List<Color>();
     private Renderer mainRenderer;
-    private Color originalColor;
 
     void Awake()
     {
         GetChildRenderers(transform);
+        foreach (Renderer renderer in childRenderers)
+        {
+            if (renderer != null) 
+            {
+                renderer.material = transparentMaterial;
+            }
+        }
         mainRenderer = GetComponent<Renderer>();
-        originalColor = mainRenderer.material.color;
-        SetChildAndMainObjectsAlpha(0f);
+        if (mainRenderer != null) 
+        {
+            mainRenderer.material = transparentMaterial;
+        }
+        else
+        {
+            Debug.LogWarning("Main Renderer not found on the object.");
+        }
     }
 
     void Update()
     {
         if (!isChasing)
-    {
-        DetectPlayer();
-    }
-    else
-    {
-        ChasePlayer();
-        
-    }
+        {
+            DetectPlayer();
+        }
+        else
+        {
+            ChasePlayer();
+        }
     }
 
     void DetectPlayer()
@@ -45,7 +57,7 @@ public class GhostManage : MonoBehaviour
             {
                 player = hitCollider.transform;
                 isChasing = true;
-                SetChildAndMainObjectsAlpha(1f);
+                StartCoroutine(BlinkAndSetMaterial(originalMaterial));
                 return;
             }
         }
@@ -63,45 +75,50 @@ public class GhostManage : MonoBehaviour
             {
                 isChasing = false;
                 player = null;
-                SetChildAndMainObjectsAlpha(0f);
+                StartCoroutine(BlinkAndSetMaterial(transparentMaterial));
             }
         }
         else
         {
             isChasing = false;
-            SetChildAndMainObjectsAlpha(0f);
+            StartCoroutine(BlinkAndSetMaterial(transparentMaterial));
         }
     }
 
-    void SetChildAndMainObjectsAlpha(float alpha)
+    IEnumerator BlinkAndSetMaterial(Material targetMaterial)
     {
-        StartCoroutine(FadeChildAndMainObjects(alpha));
-    }
+        int blinkCount = 2;
+        float blinkDuration = 0.1f;
 
-    IEnumerator FadeChildAndMainObjects(float targetAlpha)
-    {
-        float startAlpha = (targetAlpha == 0f) ? 1f : 0f;
-        float duration = 3f;
-        float elapsedTime = 0f;
-
-        while (elapsedTime < duration)
+        for (int i = 0; i < blinkCount; i++)
         {
-            float currentAlpha = Mathf.Lerp(startAlpha, targetAlpha, elapsedTime / duration);
-
-            for (int i = 0; i < childRenderers.Count; i++)
+            if (mainRenderer != null)
             {
-                Color color = childRenderers[i].material.color;
-                color.a = currentAlpha;
-                childRenderers[i].material.color = color;
+                mainRenderer.material = transparentMaterial;
             }
-
-            Color mainColor = mainRenderer.material.color;
-            mainColor.a = currentAlpha;
-            mainRenderer.material.color = mainColor;
-
-            elapsedTime += Time.deltaTime;
+            SetMaterialForAllRenderers(transparentMaterial);
+            yield return new WaitForSeconds(blinkDuration);
+            if (mainRenderer != null) 
+            {
+                mainRenderer.material = originalMaterial;
+            }
+            SetMaterialForAllRenderers(originalMaterial);
+            yield return new WaitForSeconds(blinkDuration);
         }
-        yield return null;
+
+        SetMaterialForAllRenderers(targetMaterial);
+        mainRenderer.material = targetMaterial;
+    }
+
+    void SetMaterialForAllRenderers(Material material)
+    {
+        foreach (Renderer renderer in childRenderers)
+        {
+            if (renderer != null)
+            {
+                renderer.material = material;
+            }
+        }
     }
 
     void GetChildRenderers(Transform parent)
@@ -111,8 +128,10 @@ public class GhostManage : MonoBehaviour
             if (child.name != "eye")
             {
                 Renderer renderer = child.GetComponent<Renderer>();
-                childRenderers.Add(renderer);
-                originalColors.Add(renderer.material.color);
+                if (renderer != null)
+                {
+                    childRenderers.Add(renderer);
+                }
                 GetChildRenderers(child);
             }
         }
