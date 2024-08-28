@@ -20,6 +20,8 @@ public class PlayerMovement : MonoBehaviour
 
     public float getMoveSpeed => moveSpeed;
     public float getBulletSpeed => bulletSpeed;
+
+    public bool isEntry;
     public void setMoveSpeed(float gob)
     {
         moveSpeed *= gob; 
@@ -44,34 +46,68 @@ public class PlayerMovement : MonoBehaviour
         playerCamera = Camera.main;
         rb = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
+        isEntry = false;
+    }
+
+    public void LookUp()
+    {
+        isEntry = true;
+        StartCoroutine(LookUpCoroutine());
+    }
+
+    IEnumerator LookUpCoroutine()
+    {
+        float duration = 0.5f;
+        float elapsedTime = 0f;
+        float initialRotationX = rotationX;
+        float targetRotationX = -lookXLimit;
+
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            rotationX = Mathf.Lerp(initialRotationX, targetRotationX, elapsedTime / duration);
+            playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0f, 0f);
+            yield return null;
+        }
+
+        rotationX = targetRotationX;
+        playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0f, 0f);
     }
 
     void Update()
     {
-        //카메라 회전 부
-        rotationX -= Input.GetAxis("Mouse Y") * lookSpeed;
-        rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
-        playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0f, 0f);
-        transform.rotation *= Quaternion.Euler(0f, Input.GetAxis("Mouse X") * lookSpeed, 0f);
-
-        //사용자 이동 부
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
-        Vector3 movement = new Vector3(moveHorizontal, 0f, moveVertical);
-        movement = transform.TransformDirection(movement);
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.deltaTime);
-
-        //점프 부
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (isEntry)
         {
-            Jump();
+            return;
         }
-        AimCheck();
-
-        if (Input.GetMouseButtonDown(0) && Time.time >= nextFireTime)
+        else
         {
-            FireBullet();
+            //카메라 회전 부
+            rotationX -= Input.GetAxis("Mouse Y") * lookSpeed;
+            rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
+            playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0f, 0f);
+            transform.rotation *= Quaternion.Euler(0f, Input.GetAxis("Mouse X") * lookSpeed, 0f);
+
+            //사용자 이동 부
+            float moveHorizontal = Input.GetAxis("Horizontal");
+            float moveVertical = Input.GetAxis("Vertical");
+            Vector3 movement = new Vector3(moveHorizontal, 0f, moveVertical);
+            movement = transform.TransformDirection(movement);
+            rb.MovePosition(rb.position + movement * moveSpeed * Time.deltaTime);
+
+            //점프 부
+            if (Input.GetButtonDown("Jump") && isGrounded)
+            {
+                Jump();
+            }
+            AimCheck();
+
+            if (Input.GetMouseButtonDown(0) && Time.time >= nextFireTime)
+            {
+                FireBullet();
+            }
         }
+        
     }
 
     void FireBullet()

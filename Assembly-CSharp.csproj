@@ -63,6 +63,7 @@
     <Compile Include="Assets\Script\Homing_Shot.cs" />
     <Compile Include="Assets\Script\TurretManager.cs" />
     <Compile Include="Assets\Script\FrogManage.cs" />
+    <Compile Include="Assets\triggerCollision.cs" />
     <Compile Include="Assets\HealthHeartSystem\Scripts\HealthBarController.cs" />
     <Compile Include="Assets\Script\BatManager.cs" />
     <Compile Include="Assets\Script\EnemyHealth.cs" />

@@ -381,6 +381,7 @@
 "Assets/Script/PlayerMovement.cs"
 "Assets/Script/SpiderMovement.cs"
 "Assets/Script/TurretManager.cs"
+"Assets/triggerCollision.cs"
 -langversion:9.0
 /deterministic
 /optimize+

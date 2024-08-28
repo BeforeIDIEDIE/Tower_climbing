@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - Spike
   - SpikeBall
+  - Trigger
   layers:
   - Default
   - TransparentFX
