@@ -23,38 +23,25 @@ public class PlayerHealthSystem : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         UpdateHealthUI();
     }
-
-    private void Update()
-    {
-        CheckForDamage();
-    }
-
-    private void CheckForDamage()
+    private void OnCollisionEnter(Collision collision)
     {
         if (canTakeDamage)
         {
-            Collider[] colliders = Physics.OverlapSphere(transform.position, 0.5f);
-            foreach (Collider collider in colliders)
+            if (collision.gameObject.CompareTag("EnemyBall"))
             {
-                if (collider.CompareTag("EnemyBall"))
-                {
-                    TakeDamage(1);
-                    Destroy(collider.gameObject);
-                    StartCoroutine(DamageCooldown());
-                    break;
-                }
-                else if (collider.CompareTag("Enemy")|| collider.CompareTag("SpikeBall"))
-                {
-                    TakeDamage(1);
-                    StartCoroutine(DamageCooldown());
-                    break;
-                }
-                else if (collider.CompareTag("Spike")&&!SpikeImmune)
-                {
-                    TakeDamage(1);
-                    StartCoroutine(DamageCooldown());
-                    break;
-                }
+                TakeDamage(1);
+                Destroy(collision.gameObject);
+                StartCoroutine(DamageCooldown());
+            }
+            else if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("SpikeBall"))
+            {
+                TakeDamage(1);
+                StartCoroutine(DamageCooldown());
+            }
+            else if (collision.gameObject.CompareTag("Spike") && !SpikeImmune)
+            {
+                TakeDamage(1);
+                StartCoroutine(DamageCooldown());
             }
         }
     }
@@ -64,6 +51,21 @@ public class PlayerHealthSystem : MonoBehaviour
         canTakeDamage = false;
         yield return new WaitForSeconds(invincibleTime);
         canTakeDamage = true;
+    }
+    private void UpdateHealthUI()
+    {
+        for (int i = 0; i < maxHealth; i++)
+        {
+            if (i < currentHealth)
+            {
+                healthImages[i].sprite = fullHeart;
+            }
+            else
+            {
+                healthImages[i].sprite = emptyHeart;
+            }
+        }
+        Debug.Log($"현재 체력: {currentHealth}/{maxHealth}");
     }
 
     public void TakeDamage(int damage)
@@ -113,21 +115,7 @@ public class PlayerHealthSystem : MonoBehaviour
         }
     }
 
-    private void UpdateHealthUI()
-    {
-        for (int i = 0; i < maxHealth; i++)
-        {
-            if (i < currentHealth)
-            {
-                healthImages[i].sprite = fullHeart;
-            }
-            else
-            {
-                healthImages[i].sprite = emptyHeart;
-            }
-        }
-        Debug.Log($"현재 체력: {currentHealth}/{maxHealth}");
-    }
+    
 
     private IEnumerator LowHealthEffect()
     {

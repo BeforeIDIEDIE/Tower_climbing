@@ -8,7 +8,7 @@ public class SpiderMovement : MonoBehaviour
     public GameObject detector;
     private bool isTriggered = false;
     private Rigidbody rb;
-    public float groundCheckDistance = 1f;
+    private bool isGrounded = false;
 
     void Start()
     {
@@ -33,42 +33,28 @@ public class SpiderMovement : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitUntil(() => IsGrounded());
+            yield return new WaitUntil(() => isGrounded);
             yield return new WaitForSeconds(jumpDelay);
             Jump();
-            yield return new WaitUntil(() => !IsGrounded());
+            yield return new WaitUntil(() => !isGrounded);
         }
     }
 
     void Jump()
     {
-        if (IsGrounded())
+        if (isGrounded)
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             Debug.Log("점프!");
         }
     }
 
-    bool IsGrounded()
-    {
-        // 스파이더의 위치에서 아래로 레이캐스트 발사
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, Vector3.down, out hit, groundCheckDistance))
-        {
-            if (hit.collider.CompareTag("Ground"))
-            {
-                Debug.Log("땅 확인됨");
-                return true;
-            }
-        }
-        return false;
-    }
-
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            Debug.Log("땅에 충돌");
+            isGrounded = true;
+            Debug.Log("땅에 착지함");
         }
     }
 
@@ -76,6 +62,7 @@ public class SpiderMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
+            isGrounded = false;
             Debug.Log("땅에서 벗어남");
         }
     }
