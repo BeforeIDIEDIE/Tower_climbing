@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public PlayerMovement Player;
     public PlayerHealthSystem PSHP;
     public GameObject fallingStone;
     public GameObject door;
+    public Image fadeImage; // 페이드 효과에 사용할 UI 이미지
+    public float fadeDuration = 1f; // 페이드 효과의 지속 시간
     void Start()
     {
 
@@ -37,11 +39,29 @@ public class GameManager : MonoBehaviour
         Player.LookUp();
         fallingStone.SetActive(true);
 
-        yield return new WaitForSeconds(1.5f); 
-
+        yield return new WaitForSeconds(1.5f);
+        StartCoroutine(FadeOut());
         Player.transform.position = new Vector3(-5, 2, -11); 
         Player.isEntry = false;
         door.SetActive(true);
+    }
+    public void StartFadeOutEffect()
+    {
+        StartCoroutine(FadeOut());
+    }
+    private IEnumerator FadeOut()
+    {
+        fadeImage.gameObject.SetActive(true);
+
+        float elapsedTime = 0f;
+        while (elapsedTime < fadeDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            float alpha = Mathf.Lerp(1f, 0f, elapsedTime / fadeDuration);
+            fadeImage.color = new Color(0f, 0f, 0f, alpha);
+            yield return null;
+        }
+        fadeImage.gameObject.SetActive(false);
     }
 
     //특성->normal
@@ -57,20 +77,11 @@ public class GameManager : MonoBehaviour
     {
         Player.setNextFireTime(0.75f);
     }
-    private void LuckUp()
-    {
-        //헬스킷 드랍율++;
-    }
 
     private void GamblersRisk()
     {
         //50%확률로 체력 1업
         //50%확률로 체력 1다운
-    }
-
-    private void CostDown()
-    {
-        //특성을 얻기위해 필요한 적 처치양 감소 ->대강 10 감소하면 될듯
     }
 
     //특성->rare

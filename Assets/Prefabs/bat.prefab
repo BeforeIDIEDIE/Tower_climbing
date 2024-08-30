@@ -219,9 +219,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deb6dcc01a7f0cc478894686c8203213, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectionRadius: 10
+  detectionRadius: 30
   rotationSpeed: 2
-  moveSpeed: 3
+  moveSpeed: 4
   playerTag: Player
 --- !u!114 &8730546069769946826
 MonoBehaviour:

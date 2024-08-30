@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerDetector : MonoBehaviour
 {
-    private SpiderMovement spiderMovement;
+    [SerializeField]private SpiderMovement spiderMovement;
 
     void Start()
     {

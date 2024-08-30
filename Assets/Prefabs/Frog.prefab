@@ -584,7 +584,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 5
-  jumpInterval: 2
+  jumpInterval: 1
   jumpAngle: 45
 --- !u!114 &6056723451571806715
 MonoBehaviour:

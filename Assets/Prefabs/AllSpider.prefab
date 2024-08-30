@@ -120,6 +120,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3741344313875346936}
     m_Modifications:
+    - target: {fileID: 1828618410778411623, guid: ad67e9887d6e9c947825dc20ac2a05b4, type: 3}
+      propertyPath: spiderMovement
+      value: 
+      objectReference: {fileID: 3266418470447763337}
     - target: {fileID: 2267447858982713768, guid: ad67e9887d6e9c947825dc20ac2a05b4, type: 3}
       propertyPath: m_Name
       value: Spider
@@ -163,6 +167,14 @@ PrefabInstance:
     - target: {fileID: 3344970596594011576, guid: ad67e9887d6e9c947825dc20ac2a05b4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5387834946397054359, guid: ad67e9887d6e9c947825dc20ac2a05b4, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8868900714982601055, guid: ad67e9887d6e9c947825dc20ac2a05b4, type: 3}
+      propertyPath: m_Center.y
+      value: -0.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
