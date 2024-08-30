@@ -3,16 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\twoth\\OneDrive\\\uBB38\uC11C\\GitHub\\Tower_climbing\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3185BF26-E8BD-84FF-F5F6-7C0B1A75C673}|Assembly-CSharp.csproj|C:\\Users\\twoth\\OneDrive\\\uBB38\uC11C\\GitHub\\Tower_climbing\\assets\\troopmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3185BF26-E8BD-84FF-F5F6-7C0B1A75C673}|Assembly-CSharp.csproj|solutionrelative:assets\\troopmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3185BF26-E8BD-84FF-F5F6-7C0B1A75C673}|Assembly-CSharp.csproj|C:\\Users\\twoth\\OneDrive\\\uBB38\uC11C\\GitHub\\Tower_climbing\\assets\\floormanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3185BF26-E8BD-84FF-F5F6-7C0B1A75C673}|Assembly-CSharp.csproj|solutionrelative:assets\\floormanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3185BF26-E8BD-84FF-F5F6-7C0B1A75C673}|Assembly-CSharp.csproj|c:\\users\\twoth\\onedrive\\\uBB38\uC11C\\github\\tower_climbing\\assets\\rotateforever.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3185BF26-E8BD-84FF-F5F6-7C0B1A75C673}|Assembly-CSharp.csproj|c:\\users\\twoth\\onedrive\\\uBB38\uC11C\\github\\tower_climbing\\assets\\endpointtrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3185BF26-E8BD-84FF-F5F6-7C0B1A75C673}|Assembly-CSharp.csproj|solutionrelative:assets\\endpointtrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3185BF26-E8BD-84FF-F5F6-7C0B1A75C673}|Assembly-CSharp.csproj|c:\\users\\twoth\\onedrive\\\uBB38\uC11C\\github\\tower_climbing\\assets\\floorentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3185BF26-E8BD-84FF-F5F6-7C0B1A75C673}|Assembly-CSharp.csproj|solutionrelative:assets\\floorentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3185BF26-E8BD-84FF-F5F6-7C0B1A75C673}|Assembly-CSharp.csproj|C:\\Users\\twoth\\OneDrive\\\uBB38\uC11C\\GitHub\\Tower_climbing\\assets\\script\\playerhealthsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3185BF26-E8BD-84FF-F5F6-7C0B1A75C673}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\playerhealthsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3185BF26-E8BD-84FF-F5F6-7C0B1A75C673}|Assembly-CSharp.csproj|C:\\Users\\twoth\\OneDrive\\\uBB38\uC11C\\GitHub\\Tower_climbing\\assets\\rotateforever.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3185BF26-E8BD-84FF-F5F6-7C0B1A75C673}|Assembly-CSharp.csproj|solutionrelative:assets\\rotateforever.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3185BF26-E8BD-84FF-F5F6-7C0B1A75C673}|Assembly-CSharp.csproj|c:\\users\\twoth\\onedrive\\\uBB38\uC11C\\github\\tower_climbing\\assets\\script\\playerhealthsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3185BF26-E8BD-84FF-F5F6-7C0B1A75C673}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\playerhealthsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3185BF26-E8BD-84FF-F5F6-7C0B1A75C673}|Assembly-CSharp.csproj|C:\\Users\\twoth\\OneDrive\\\uBB38\uC11C\\GitHub\\Tower_climbing\\assets\\troopmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3185BF26-E8BD-84FF-F5F6-7C0B1A75C673}|Assembly-CSharp.csproj|solutionrelative:assets\\troopmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3185BF26-E8BD-84FF-F5F6-7C0B1A75C673}|Assembly-CSharp.csproj|C:\\Users\\twoth\\OneDrive\\\uBB38\uC11C\\GitHub\\Tower_climbing\\assets\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -58,11 +70,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FloorEntry.cs",
+              "DocumentMoniker": "C:\\Users\\twoth\\OneDrive\\\uBB38\uC11C\\GitHub\\Tower_climbing\\Assets\\FloorEntry.cs",
+              "RelativeDocumentMoniker": "Assets\\FloorEntry.cs",
+              "ToolTip": "C:\\Users\\twoth\\OneDrive\\\uBB38\uC11C\\GitHub\\Tower_climbing\\Assets\\FloorEntry.cs",
+              "RelativeToolTip": "Assets\\FloorEntry.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-30T08:21:19.854Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FloorManager.cs",
+              "DocumentMoniker": "C:\\Users\\twoth\\OneDrive\\\uBB38\uC11C\\GitHub\\Tower_climbing\\Assets\\FloorManager.cs",
+              "RelativeDocumentMoniker": "Assets\\FloorManager.cs",
+              "ToolTip": "C:\\Users\\twoth\\OneDrive\\\uBB38\uC11C\\GitHub\\Tower_climbing\\Assets\\FloorManager.cs",
+              "RelativeToolTip": "Assets\\FloorManager.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAqwCUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-30T07:26:21.986Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "EndPointTrigger.cs",
+              "DocumentMoniker": "C:\\Users\\twoth\\OneDrive\\\uBB38\uC11C\\GitHub\\Tower_climbing\\Assets\\EndPointTrigger.cs",
+              "RelativeDocumentMoniker": "Assets\\EndPointTrigger.cs",
+              "ToolTip": "C:\\Users\\twoth\\OneDrive\\\uBB38\uC11C\\GitHub\\Tower_climbing\\Assets\\EndPointTrigger.cs",
+              "RelativeToolTip": "Assets\\EndPointTrigger.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-30T07:18:12.16Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "RotateForever.cs",
               "DocumentMoniker": "C:\\Users\\twoth\\OneDrive\\\uBB38\uC11C\\GitHub\\Tower_climbing\\Assets\\RotateForever.cs",
               "RelativeDocumentMoniker": "Assets\\RotateForever.cs",
@@ -75,7 +126,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "PlayerHealthSystem.cs",
               "DocumentMoniker": "C:\\Users\\twoth\\OneDrive\\\uBB38\uC11C\\GitHub\\Tower_climbing\\Assets\\Script\\PlayerHealthSystem.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\PlayerHealthSystem.cs",
@@ -88,7 +139,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 14,
               "Title": "TurretManager.cs",
               "DocumentMoniker": "C:\\Users\\twoth\\OneDrive\\\uBB38\uC11C\\GitHub\\Tower_climbing\\Assets\\Script\\TurretManager.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\TurretManager.cs",
@@ -100,7 +151,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "GameManager.cs",
               "DocumentMoniker": "C:\\Users\\twoth\\OneDrive\\\uBB38\uC11C\\GitHub\\Tower_climbing\\Assets\\GameManager.cs",
               "RelativeDocumentMoniker": "Assets\\GameManager.cs",
@@ -112,7 +163,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "triggerCollision.cs",
               "DocumentMoniker": "C:\\Users\\twoth\\OneDrive\\\uBB38\uC11C\\GitHub\\Tower_climbing\\Assets\\triggerCollision.cs",
               "RelativeDocumentMoniker": "Assets\\triggerCollision.cs",
@@ -124,20 +175,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "troopMovement.cs",
               "DocumentMoniker": "C:\\Users\\twoth\\OneDrive\\\uBB38\uC11C\\GitHub\\Tower_climbing\\Assets\\troopMovement.cs",
               "RelativeDocumentMoniker": "Assets\\troopMovement.cs",
               "ToolTip": "C:\\Users\\twoth\\OneDrive\\\uBB38\uC11C\\GitHub\\Tower_climbing\\Assets\\troopMovement.cs",
               "RelativeToolTip": "Assets\\troopMovement.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAswB8AAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAswBUAAABVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-29T12:43:02.242Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-29T12:43:02.242Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "PlayerMovement.cs",
               "DocumentMoniker": "C:\\Users\\twoth\\OneDrive\\\uBB38\uC11C\\GitHub\\Tower_climbing\\Assets\\Script\\PlayerMovement.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\PlayerMovement.cs",
@@ -149,7 +199,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "Bullet.cs",
               "DocumentMoniker": "C:\\Users\\twoth\\OneDrive\\\uBB38\uC11C\\GitHub\\Tower_climbing\\Assets\\Bullet.cs",
               "RelativeDocumentMoniker": "Assets\\Bullet.cs",
@@ -161,7 +211,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "EnemyHealth.cs",
               "DocumentMoniker": "C:\\Users\\twoth\\OneDrive\\\uBB38\uC11C\\GitHub\\Tower_climbing\\Assets\\Script\\EnemyHealth.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\EnemyHealth.cs",
@@ -173,7 +223,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "SpiderMovement.cs",
               "DocumentMoniker": "C:\\Users\\twoth\\OneDrive\\\uBB38\uC11C\\GitHub\\Tower_climbing\\Assets\\Script\\SpiderMovement.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\SpiderMovement.cs",
@@ -185,7 +235,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "PlayerDetector.cs",
               "DocumentMoniker": "C:\\Users\\twoth\\OneDrive\\\uBB38\uC11C\\GitHub\\Tower_climbing\\Assets\\Script\\PlayerDetector.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\PlayerDetector.cs",
@@ -197,7 +247,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "GhostManage.cs",
               "DocumentMoniker": "C:\\Users\\twoth\\OneDrive\\\uBB38\uC11C\\GitHub\\Tower_climbing\\Assets\\Script\\GhostManage.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\GhostManage.cs",
