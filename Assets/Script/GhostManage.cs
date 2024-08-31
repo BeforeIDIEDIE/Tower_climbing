@@ -30,10 +30,6 @@ public class GhostManage : MonoBehaviour
         {
             mainRenderer.material = transparentMaterial;
         }
-        else
-        {
-            Debug.LogWarning("Main Renderer not found on the object.");
-        }
     }
 
     void Update()

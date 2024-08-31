@@ -11,7 +11,7 @@ public class PlayerHealthSystem : MonoBehaviour
     private bool canTakeDamage = true;
     private bool SpikeImmune = false;
     private float invincibleTime = 2f;
-    
+    public GameManager gm;
     // 하트 이미지
     [SerializeField] private Image[] healthImages;
     [SerializeField] private Sprite fullHeart;
@@ -33,7 +33,7 @@ public class PlayerHealthSystem : MonoBehaviour
                 Destroy(collision.gameObject);
                 StartCoroutine(DamageCooldown());
             }
-            else if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("SpikeBall"))
+            else if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("SpikeBall")|| collision.gameObject.CompareTag("Boss"))
             {
                 TakeDamage(1);
                 StartCoroutine(DamageCooldown());
@@ -45,7 +45,23 @@ public class PlayerHealthSystem : MonoBehaviour
             }
         }
     }
-
+    private void OnTriggerEnter(Collider other)
+    {
+        if (canTakeDamage)
+        {
+            if (other.gameObject.CompareTag("EnemyBall"))
+            {
+                TakeDamage(1);
+                Destroy(other.gameObject);
+                StartCoroutine(DamageCooldown());   
+            }
+            else if(other.gameObject.CompareTag("Spike"))
+            {
+                TakeDamage(1);
+                StartCoroutine(DamageCooldown());
+            }
+        }
+    }
     private IEnumerator DamageCooldown()
     {
         canTakeDamage = false;
@@ -106,16 +122,22 @@ public class PlayerHealthSystem : MonoBehaviour
     {
         SpikeImmune = true;
     }
-    private void Die()
+    public void Die()
     {
         Debug.Log("플레이어가 사망했습니다.");
         if (rb != null)
         {
             rb.constraints &= ~RigidbodyConstraints.FreezeRotation;
+            StartCoroutine(WaitAndDie());
         }
     }
 
-    
+    private IEnumerator WaitAndDie()
+    {
+        yield return new WaitForSeconds(3f);
+        gm.PlayerDied();
+        yield return null;
+    }
 
     private IEnumerator LowHealthEffect()
     {

@@ -29,7 +29,7 @@ public class Homing_Shot : MonoBehaviour
         
         Quaternion lookRotation = Quaternion.LookRotation(direction);
         rb.MoveRotation(Quaternion.RotateTowards(transform.rotation, lookRotation, rotateSpeed * Time.fixedDeltaTime));
-
+        
         
         rb.velocity = transform.forward * speed;
     }

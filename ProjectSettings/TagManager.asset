@@ -12,6 +12,7 @@ TagManager:
   - SpikeBall
   - Trigger
   - Spider
+  - Boss
   layers:
   - Default
   - TransparentFX
