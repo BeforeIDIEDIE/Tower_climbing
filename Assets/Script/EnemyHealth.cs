@@ -1,11 +1,14 @@
+using System;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-
 public class EnemyHealth : MonoBehaviour
 {
+    public bool isDead = false;
     [SerializeField] private int maxHealth = 2;
     private int currentHealth;
+
+    public event Action<EnemyHealth> OnEnemyDeath;
 
     private void Start()
     {
@@ -15,8 +18,8 @@ public class EnemyHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        Debug.Log("피해"+damage);
-        if (currentHealth <= 0)
+        Debug.Log("피해" + damage);
+        if (currentHealth <= 0 && !isDead)
         {
             Die();
         }
@@ -24,6 +27,8 @@ public class EnemyHealth : MonoBehaviour
 
     private void Die()
     {
+        isDead = true;
+        OnEnemyDeath?.Invoke(this);
         Destroy(gameObject);
     }
 }

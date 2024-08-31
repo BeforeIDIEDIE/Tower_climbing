@@ -63,6 +63,7 @@
     <Compile Include="Assets\Script\PlayerHealthSystem.cs" />
     <Compile Include="Assets\Script\Homing_Shot.cs" />
     <Compile Include="Assets\FloorManager.cs" />
+    <Compile Include="Assets\BossMovement.cs" />
     <Compile Include="Assets\Script\TurretManager.cs" />
     <Compile Include="Assets\Script\FrogManage.cs" />
     <Compile Include="Assets\triggerCollision.cs" />
@@ -75,6 +76,7 @@
     <Compile Include="Assets\HealthHeartSystem\Scripts\HealthBarHUDTester.cs" />
     <Compile Include="Assets\Script\PlatformMover.cs" />
     <Compile Include="Assets\Script\PlayerDetector.cs" />
+    <Compile Include="Assets\BossBall.cs" />
     <Compile Include="Assets\Script\Magician_Manage.cs" />
     <Compile Include="Assets\HealthHeartSystem\Scripts\PlayerStats.cs" />
     <Compile Include="Assets\GameManager.cs" />

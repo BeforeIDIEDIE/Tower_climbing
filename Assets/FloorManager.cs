@@ -21,10 +21,11 @@ public class FloorManager : MonoBehaviour
     public List<EnemySpawnInfo> enemySpawnInfos;
     public GameObject enemyPrefab1;
     public GameObject enemyPrefab2;
-    //public GameObject rewardPrefab;//맨 마지막 구현 
     public GameObject endPoint;
     public Transform nextStagePosition;
+
     private List<GameObject> enemies;
+    private int enemiesDefeated = 0;
 
     private void Start()
     {
@@ -35,7 +36,6 @@ public class FloorManager : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            // 적 생성
             SpawnEnemies();
         }
     }
@@ -46,26 +46,38 @@ public class FloorManager : MonoBehaviour
         foreach (EnemySpawnInfo spawnInfo in enemySpawnInfos)
         {
             GameObject enemyPrefab = (spawnInfo.enemyType == EnemyType.Enemy1) ? enemyPrefab1 : enemyPrefab2;
-            GameObject enemy = Instantiate(enemyPrefab,
+            GameObject enemyObject = Instantiate(enemyPrefab,
                                            spawnInfo.spawnPoint.transform.position,
                                            spawnInfo.spawnPoint.transform.rotation);
-            enemies.Add(enemy);
+            enemies.Add(enemyObject);
+
+            EnemyHealth enemyHealth = enemyObject.GetComponent<EnemyHealth>();
+            if (enemyHealth != null)
+            {
+                enemyHealth.OnEnemyDeath += OnEnemyDefeated;
+            }
         }
+    }
+
+    private void OnEnemyDefeated(EnemyHealth enemy)
+    {
+        enemiesDefeated++;
+        Debug.Log($"Enemy defeated! Total enemies defeated: {enemiesDefeated}");
     }
 
     public void CheckEndConditions(GameObject player)
     {
-        // 모든 적이 제거되었는지 확인
-        bool allEnemiesDefeated = enemies.TrueForAll(enemy => enemy == null);
+        int totalEnemies = enemySpawnInfos.Count;
+        Debug.Log($"Defeated enemies: {enemiesDefeated} / Total enemies: {totalEnemies}");
+
+        bool allEnemiesDefeated = (enemiesDefeated == totalEnemies);
         if (allEnemiesDefeated)
         {
-            // 보상 생성
-            //Instantiate(rewardPrefab, endPoint.transform.position, Quaternion.identity);
-            Debug.Log("Clear All");
+            Debug.Log($"Clear All. Total enemies defeated: {enemiesDefeated}");
         }
         else
         {
-            // 플레이어를 다음 스테이지 위치로 이동
+            Debug.Log($"Not all enemies defeated yet. Enemies defeated: {enemiesDefeated}");
             MovePlayerToNextStage(player);
         }
     }
@@ -73,7 +85,6 @@ public class FloorManager : MonoBehaviour
     private void MovePlayerToNextStage(GameObject player)
     {
         DestroyAllEnemies();
-        // 플레이어를 nextStagePosition으로 이동
         player.transform.position = nextStagePosition.position;
     }
 
@@ -87,5 +98,6 @@ public class FloorManager : MonoBehaviour
             }
         }
         enemies.Clear();
+        enemiesDefeated = 0;
     }
 }
